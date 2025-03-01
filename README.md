@@ -29,7 +29,7 @@ Das **Schwimmbad Treueprogramm** ist eine WPF-Anwendung, die es Nutzern ermögli
 
 ### Registrierung
 
-![Registrierung](screenshot1.png)
+![Registrierung](https://github.com/Melih-beep/Schwimmbad-Pr-mien-und-Treueprogramm-2/blob/main/Dokumentation/Screen1.png)
 
 ### Dashboard
 
