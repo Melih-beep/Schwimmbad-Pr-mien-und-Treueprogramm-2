@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schwimmbad 2.4", "Schwimmbad 2.4\Schwimmbad 2.4.csproj", "{EE20EEA5-7343-4C41-B339-265BA3EBF0CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE20EEA5-7343-4C41-B339-265BA3EBF0CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE20EEA5-7343-4C41-B339-265BA3EBF0CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE20EEA5-7343-4C41-B339-265BA3EBF0CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE20EEA5-7343-4C41-B339-265BA3EBF0CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD7951D4-9B8B-438F-893D-46D2AC9C57CD}
+	EndGlobalSection
+EndGlobal

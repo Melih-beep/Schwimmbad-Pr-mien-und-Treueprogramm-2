@@ -1,0 +1,159 @@
+﻿<Window x:Class="MyProject.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Icon="Resources/icon.png"
+        Title="Prämien und Treueprogramm" Height="700" Width="1000" Background="White">
+    <Window.Resources>
+        <!-- Farben & Brushes -->
+        <Color x:Key="PrimaryColor">#FF6200EE</Color>
+        <Color x:Key="AccentColor">#FF03DAC5</Color>
+        <Color x:Key="BackgroundColor">#FFF5F5F5</Color>
+        <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource PrimaryColor}" />
+        <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+        <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
+
+        <!-- Style für Buttons -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource AccentBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style für TextBox -->
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+
+        <!-- Style für Labels -->
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <!-- Fade-In Animation für Tabinhalte -->
+        <Storyboard x:Key="FadeInStoryboard">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5"/>
+        </Storyboard>
+
+        <!-- Optional: DataTemplate für Nutzerdarstellung -->
+        <DataTemplate x:Key="NutzerTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Resources/icon.png" Width="20" Height="20" Margin="0,0,5,0"/>
+                <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="{StaticResource PrimaryBrush}" />
+                <TextBlock Text=" - " />
+                <TextBlock Text="{Binding Punkte}" Foreground="Black" />
+                <TextBlock Text=" Punkte, " />
+                <TextBlock Text="{Binding Besuche}" Foreground="Black" />
+                <TextBlock Text=" Besuche" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <DockPanel Background="{StaticResource BackgroundBrush}">
+        <!-- Header mit Icon und Beschreibung -->
+        <Border Background="{StaticResource PrimaryBrush}" Padding="10" DockPanel.Dock="Top">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Image Source="Resources/icon.png" Width="50" Height="50" Margin="5"/>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Prämien und Treueprogramm" FontSize="26" Foreground="White" FontWeight="Bold"/>
+                    <TextBlock Text="Verwalte dein Treueprogramm – Punkte sammeln, einlösen und mehr." 
+                               FontSize="14" Foreground="White"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Hauptinhalt: TabControl -->
+        <TabControl x:Name="MainTabControl" SelectionChanged="MainTabControl_SelectionChanged" Margin="10">
+            <!-- Info-Tab -->
+            <TabItem Header="Info">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <TextBlock TextWrapping="Wrap" FontSize="16">
+                            Willkommen bei Prämien und Treueprogramm! Diese Anwendung ermöglicht es dir, 
+                            dein eigenes Treueprogramm zu verwalten. Registriere dich oder logge dich ein, 
+                            um Punkte zu sammeln und sie für Rabatte oder Freikarten einzulösen. 
+                            Als Administrator hast du zudem die Möglichkeit, Nutzerdaten anzupassen.
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <!-- Login/Registrierung -->
+            <TabItem Header="Login/Registrierung">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <Label Content="E-Mail:"/>
+                        <TextBox x:Name="txtEmailLogin" Width="250"/>
+                        <Label Content="Name (bei Registrierung):"/>
+                        <TextBox x:Name="txtNameLogin" Width="250"/>
+                        <Button Content="Einloggen/Registrieren" Click="LoginRegister_Click" Width="250"/>
+                        <TextBlock x:Name="txtResultLogin" TextWrapping="Wrap" Margin="10" FontSize="14"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <!-- Punkte anzeigen -->
+            <TabItem Header="Punkte anzeigen">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <Label Content="E-Mail:"/>
+                        <TextBox x:Name="txtEmailShow" Width="250"/>
+                        <Button Content="Punkte anzeigen" Click="ShowPoints_Click" Width="250"/>
+                        <TextBlock x:Name="txtResultShow" TextWrapping="Wrap" Margin="10" FontSize="14"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <!-- Punkte einlösen -->
+            <TabItem Header="Punkte einlösen">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <Label Content="E-Mail:"/>
+                        <TextBox x:Name="txtEmailRedeem" Width="250"/>
+                        <Label Content="Auswahl: 1 = Rabatt (5 Punkte), 2 = Freikarte (10 Punkte)"/>
+                        <TextBox x:Name="txtChoiceRedeem" Width="250"/>
+                        <Button Content="Punkte einlösen" Click="RedeemPoints_Click" Width="250"/>
+                        <TextBlock x:Name="txtResultRedeem" TextWrapping="Wrap" Margin="10" FontSize="14"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <!-- Admin: Punkte anpassen -->
+            <TabItem Header="Admin: Punkte anpassen">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <Label Content="Admin E-Mail:"/>
+                        <TextBox x:Name="txtAdminEmail" Width="250"/>
+                        <Label Content="Admin Passwort:"/>
+                        <PasswordBox x:Name="txtAdminPassword" Width="250"/>
+                        <Label Content="Ziel E-Mail:"/>
+                        <TextBox x:Name="txtTargetEmail" Width="250"/>
+                        <Label Content="Neuer Punktestand:"/>
+                        <TextBox x:Name="txtNewPoints" Width="250"/>
+                        <Button Content="Punkte anpassen" Click="AdjustPoints_Click" Width="250"/>
+                        <TextBlock x:Name="txtResultAdmin" TextWrapping="Wrap" Margin="10" FontSize="14"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
