@@ -2,7 +2,7 @@
 
 # Schwimmbad Treueprogramm
 
-**Projekt von:** [Dein Name]
+**Projekt von:** [Melih Karatas]
 
 ## Beschreibung
 
