@@ -1,14 +1,30 @@
-Testprotokoll
-Das Testprotokoll enthält für jeden Testfall folgende Angaben:
+# Testprotokoll für Schwimmbad Treueprogramm
 
-Durchgeführter Test: T01
-Datum: 15.22 Uhr
-Tester: Entwickler.
-Beobachtetes Resultat: Erfolgreich.
-Testergebnis: Es entspricht den Erwartungen vollkommen und besteht den Test.
+## Durchgeführter Test 1: Einloggen als Nutzer
+**Test-ID:** T01  
+**Datum:** 2025-03-01  
+**Tester:** [Melih]  
 
-Durchgeführter Test: T02
-Datum: 15.33 Uhr
-Tester: Entwickler.
-Beobachtetes Resultat: Erfolgreich.
-Testergebnis: Es entspricht den Erwartungen vollkommen und besteht den Test.
+**Beobachtetes Resultat:**  
+- Der Login-Prozess wurde erfolgreich abgeschlossen.
+- Der Punktestand des Nutzers ("melih2") wurde im Dashboard angezeigt.
+- Die Funktionen "Punkte einsehen" und "Punkte einlösen" wurden aktiviert.
+
+**Testergebnis:**  
+- Das beobachtete Resultat entspricht dem erwarteten Resultat.
+- Der Test war erfolgreich.
+
+---
+
+## Durchgeführter Test 2: Registrierung eines neuen Nutzers
+**Test-ID:** T02  
+**Datum:** 2025-03-01  
+**Tester:** [Melih]  
+
+**Beobachtetes Resultat:**  
+- Der Benutzername "melih2" wurde erfolgreich registriert.
+- Eine Bestätigungsmeldung "Erfolgreich registriert" erschien.
+
+**Testergebnis:**  
+- Das beobachtete Resultat entspricht dem erwarteten Resultat.
+- Der Test war erfolgreich.
