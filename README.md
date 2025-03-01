@@ -33,7 +33,7 @@ Das **Schwimmbad Treueprogramm** ist eine WPF-Anwendung, die es Nutzern ermögli
 
 ### Punkte anzeigen
 
-![Punkte anzeigen](https://github.com/Melih-beep/Schwimmbad-Pr-mien-und-Treueprogramm-2/blob/main/Dokumentation/Screen2.png)
+![Punkte anzeigen](https://github.com/Melih-beep/Schwimmbad-Pr-mien-und-Treueprogramm-2/blob/main/Dokumentation/Screen4.png)
 
 ### Punkte einlösen
 
@@ -41,7 +41,7 @@ Das **Schwimmbad Treueprogramm** ist eine WPF-Anwendung, die es Nutzern ermögli
 
 ### Admin: Punkte anpassen
 
-![Admin: Punkte anpassen](https://github.com/Melih-beep/Schwimmbad-Pr-mien-und-Treueprogramm-2/blob/main/Dokumentation/Screen4.png)
+![Admin: Punkte anpassen](https://github.com/Melih-beep/Schwimmbad-Pr-mien-und-Treueprogramm-2/blob/main/Dokumentation/Screen2.png)
 
 
 ## Technische Details
